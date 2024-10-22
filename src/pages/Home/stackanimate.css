@@ -1,0 +1,10 @@
+.hero-wrap {
+    position: relative; /* Set position to relative */
+    z-index: 1; /* Set a base z-index */
+  }
+  
+  .ftco-section {
+    position: relative; /* Positioning for stacking */
+    top: 0px; /* Adjust as needed to move up */
+    z-index: 2; /* Higher z-index to stack over the hero */
+  }

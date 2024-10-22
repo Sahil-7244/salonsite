@@ -1,0 +1,17 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #343a40; /* Adjust to match your theme */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  .hidden {
+    transform: translateY(-100%); /* Move the header off-screen */
+  }
+  
+  .visible {
+    transform: translateY(0); /* Bring the header back into view */
+  }
