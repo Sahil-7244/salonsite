@@ -1,70 +1,108 @@
-import FadeInUp from "../../For trigger Animation/animation"
+import FadeInUp from "../../For trigger Animation/animation";
+import emailjs from "emailjs-com";
 
-export default function Booking(){
+export default function Booking() {
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+console.log(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+        try {
+            await emailjs.sendForm(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                e.target,
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+            );
+
+            alert("Your appointment has been booked successfully!");
+            e.target.reset();
+
+        } catch (error) {
+            alert("Failed to send booking. Please try again.");
+            console.error(error);
+        }
+    };
+
     return(
         <>
-            <section class="ftco-section ftco-booking bg-light" id="booking">
-                <div class="container ftco-relative">
-                    <div class="row justify-content-center pb-3">
+            <section className="ftco-section ftco-booking bg-light" id="booking">
+                <div className="container ftco-relative">
+                    <div className="row justify-content-center pb-3">
                         <FadeInUp classname="col-md-10 heading-section text-center ftco-animate">
-                            <span class="subheading">Booking</span>
-                            <h2 class="mb-4">Make an Appointment</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                            <span className="subheading">Booking</span>
+                            <h2 className="mb-4">Make an Appointment</h2>
+                            <p>Far far away, behind the word mountains</p>
                         </FadeInUp>
                     </div>
-                    <h3 class="vr">Call Us: 012-3456-7890</h3>
-                    <div class="row justify-content-center">
+
+                    <h3 className="vr">Call Us: 012-3456-7890</h3>
+
+                    <div className="row justify-content-center">
                         <FadeInUp classname="col-md-10 ftco-animate">
-                            <form action="#" class="appointment-form">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="appointment_name" placeholder="Name" required/>
+
+                            <form className="appointment-form" onSubmit={handleSubmit}>
+                                <div className="row">
+
+                                    <div className="col-sm-6">
+                                        <div className="form-group">
+                                            <input type="text" name="name" className="form-control" placeholder="Name" required/>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="appointment_email" placeholder="Email" required/>
+
+                                    <div className="col-sm-6">
+                                        <div className="form-group">
+                                            <input type="email" name="email" className="form-control" placeholder="Email" required/>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="date" class="form-control appointment_date" placeholder="Date" required/>
+
+                                    <div className="col-sm-6">
+                                        <div className="form-group">
+                                            <input type="date" name="date" className="form-control appointment_date" required/>
                                         </div>    
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control appointment_time" placeholder="Time" required/>
+
+                                    <div className="col-sm-6">
+                                        <div className="form-group">
+                                            <input type="time" name="time" className="form-control appointment_time" required/>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <div class="select-wrap">
-                                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                                <select name="" id="" class="form-control">
-                                                    <option value="">Professional Makeup</option>
-                                                    <option value="">Manicure Pedicure</option>
-                                                    <option value="">Body Treatment</option>
-                                                    <option value="">Haircut &amp; Coloring</option>
+
+                                    <div className="col-sm-6">
+                                        <div className="form-group">
+                                            <div className="select-wrap">
+                                                <div className="icon"><span className="ion-ios-arrow-down"></span></div>
+                                                <select name="service" className="form-control">
+                                                    <option value="Professional Makeup">Professional Makeup</option>
+                                                    <option value="Manicure Pedicure">Manicure Pedicure</option>
+                                                    <option value="Body Treatment">Body Treatment</option>
+                                                    <option value="Haircut & Coloring">Haircut & Coloring</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="phone" placeholder="Phone (ex.12345-67890)" pattern="[0-9]{10}" required/>
+
+                                    <div className="col-sm-6">
+                                        <div className="form-group">
+                                            <input type="tel" name="phone" className="form-control"
+                                                placeholder="Phone (ex.1234567890)" pattern="[0-9]{10}" required/>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+
+                                    <div className="col-md-12">
+                                        <div className="form-group">
+                                            <textarea name="message" cols="30" rows="7"
+                                                className="form-control" placeholder="Message"></textarea>
                                         </div>
                                     </div>
+
                                 </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Make an Appointment" class="btn btn-primary" />
+
+                                <div className="form-group">
+                                    <input type="submit" value="Make an Appointment" className="btn btn-primary" />
                                 </div>
+
                             </form>
+
                         </FadeInUp>
                     </div>
                 </div>

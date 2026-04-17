@@ -13,22 +13,22 @@ export default function Gallery(){
 
     return(
         <>
-            <section class="ftco-section ftco-no-pt ftco-no-pb">
-                <div class="container">
-                    <div class="row no-gutters justify-content-center mb-5 pb-2">
+            <section className="ftco-section ftco-no-pt ftco-no-pb">
+                <div className="container">
+                    <div className="row no-gutters justify-content-center mb-5 pb-2">
                         <FadeInUp classname="col-md-6 text-center heading-section ftco-animate">
-                            <span class="subheading">Gallery</span>
-                            <h2 class="mb-4">Our gallery</h2>
+                            <span className="subheading">Gallery</span>
+                            <h2 className="mb-4">Our gallery</h2>
                             <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                         </FadeInUp>
                     </div>
                 </div>
-                <div class="container-fluid p-0">
-                    <div class="row no-gutters">
+                <div className="container-fluid p-0">
+                    <div className="row no-gutters">
                         {
                             gallerydata.map(
                                 (pic,i)=>{
-                                    return <Galleryprops img={pic.image} headtitle={pic.headingtitle} vrtitle={pic.verticletitle} />
+                                    return <Galleryprops key={i} img={pic.image} headtitle={pic.headingtitle} vrtitle={pic.verticletitle} />
                                 }
                             )
                         }
@@ -43,14 +43,14 @@ function Galleryprops(props){
     return(
         <>
             <FadeInUp classname="col-md-6 col-lg-3 ftco-animate">
-                <div class="project">
-                    <img src={"images/"+props.img} class="img-fluid" alt="Colorlib Template" />
-                    <div class="text">
+                <div className="project">
+                    <img src={"images/"+props.img} className="img-fluid" alt="Colorlib Template" />
+                    <div className="text">
                         <span>{props.headtitle}</span>
                         <h3><a href="project.html">{props.vrtitle}</a></h3>
                     </div>
-                    <a href={"images/"+props.img} class="icon image-popup d-flex justify-content-center align-items-center">
-                        <span class="icon-expand"></span>
+                    <a href={"images/"+props.img} className="icon image-popup d-flex justify-content-center align-items-center">
+                        <span className="icon-expand"></span>
                     </a>
                 </div>
             </FadeInUp>

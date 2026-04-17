@@ -9,20 +9,20 @@ export default function Pricing(){
 
     return(
         <>
-            <section class="ftco-section ftco-pricing" id="pricing">
-			<div class="container">
-				<div class="row justify-content-center pb-3">
+            <section className="ftco-section ftco-pricing" id="pricing">
+			<div className="container">
+				<div className="row justify-content-center pb-3">
                     <FadeInUp classname="col-md-10 heading-section text-center ftco-animate">
-          	            <span class="subheading">Pricing</span>
-                        <h2 class="mb-4">Our Prices</h2>
+          	            <span className="subheading">Pricing</span>
+                        <h2 className="mb-4">Our Prices</h2>
                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
                     </FadeInUp>
                 </div>
-                <div class="row">
+                <div className="row">
                     {
                         pricingdata.map(
                             (price,i)=>{
-                                return <Pricingprops title={price.title} price={price.price} list1={price.list1} list2={price.list2} list3={price.list3} list4={price.list4} list5={price.list5} />
+                                return <Pricingprops key={i} title={price.title} price={price.price} list1={price.list1} list2={price.list2} list3={price.list3} list4={price.list4} list5={price.list5} />
                             }
                         )
                     }
@@ -37,10 +37,10 @@ function Pricingprops(props){
     return(
         <>
              <FadeInUp classname="col-md-3 ftco-animate">
-                <div class="pricing-entry pb-5 text-center" style={{marginRight:"10px", marginLeft: "10px"}}>
+                <div className="pricing-entry pb-5 text-center" style={{marginRight:"10px", marginLeft: "10px"}}>
                     <div>
-                        <h3 class="mb-4">{props.title}</h3>
-                        <p><span class="price">{props.price}</span> <span class="per">/ session</span></p>
+                        <h3 className="mb-4">{props.title}</h3>
+                        <p><span className="price">{props.price}</span> <span className="per">/ session</span></p>
                     </div>
                     <ul>
                         <li>{props.list1}</li>
@@ -49,7 +49,7 @@ function Pricingprops(props){
                         <li>{props.list4}</li>
                         <li>{props.list5}</li>
                     </ul>
-                    <p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get Offer</a></p>
+                    <p className="button text-center"><a href="#" className="btn btn-primary px-4 py-3">Get Offer</a></p>
                 </div>
             </FadeInUp>
         </>

@@ -14,17 +14,17 @@ export default function Testimonial(){
 
     return(
         <>
-            <section class="testimony-section bg-light">
-                <div class="container">
+            <section className="testimony-section bg-light">
+                <div className="container">
                     <FadeInUp classname="row ftco-animate justify-content-center">
-                        <div class="col-md-6 col-lg-5 d-flex">
-                            <div class="testimony-img" style={{backgroundImage: "url(images/testimony-img.jpg)"}}></div>
+                        <div className="col-md-6 col-lg-5 d-flex">
+                            <div className="testimony-img" style={{backgroundImage: "url(images/testimony-img.jpg)"}}></div>
                         </div>
-                        <div class="col-md-6 col-lg-7 py-5 pl-md-5">
-                            <div class="py-md-5">
+                        <div className="col-md-6 col-lg-7 py-5 pl-md-5">
+                            <div className="py-md-5">
                                 <FadeInUp classname="heading-section ftco-animate">
-                                    <span class="subheading">Testimony</span>
-                                    <h2 class="mb-0">Happy Customer</h2>
+                                    <span className="subheading">Testimony</span>
+                                    <h2 className="mb-0">Happy Customer</h2>
                                 </FadeInUp>
                                 <FadeInUp>
                                 <OwlCarousel
@@ -39,7 +39,7 @@ export default function Testimonial(){
                                     autoplayHoverPause={true}
                                     nav= {false}
                                     dots
-                                    navText={ ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">']}
+                                    navText={ ['<span className="ion-ios-arrow-back">', '<span className="ion-ios-arrow-forward">']}
                                     responsive={{
                                         0:{
                                             items: 1
@@ -54,7 +54,7 @@ export default function Testimonial(){
                                     {
                                         testimonialdata.map(
                                             (a,i)=>{
-                                                return <Testimonialprops content={a.content} uimg={a.userimage} name={a.name} post={a.post} />
+                                                return <Testimonialprops key={i} content={a.content} uimg={a.userimage} name={a.name} post={a.post} />
                                             }
                                         )
                                     }
@@ -72,17 +72,17 @@ export default function Testimonial(){
 function Testimonialprops(props){
     return(
         <>
-            <div class="item">
-                <div class="testimony-wrap pb-4">
-                    <div class="text">
-                        <p class="mb-4">{props.content}</p>
+            <div className="item">
+                <div className="testimony-wrap pb-4">
+                    <div className="text">
+                        <p className="mb-4">{props.content}</p>
                     </div>
-                    <div class="d-flex">
-                        <div class="user-img" style={{backgroundImage: "url(images/"+props.uimg+")"}}></div>
+                    <div className="d-flex">
+                        <div className="user-img" style={{backgroundImage: "url(images/"+props.uimg+")"}}></div>
                     </div>
-                    <div class="pos ml-3">
-                        <p class="name">{props.name}</p>
-                        <span class="position">{props.post}</span>
+                    <div className="pos ml-3">
+                        <p className="name">{props.name}</p>
+                        <span className="position">{props.post}</span>
                     </div>
                 </div>
             </div>

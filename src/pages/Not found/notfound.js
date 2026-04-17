@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Notfound(){
     return(
         <>
-            <div class="container">
+            <div className="container">
                 <h1 style={{paddingTop:"20px", fontSize: "7vw", fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", lineHeight: "1", fontWeight: "600", color: "GrayText"}}><center>OOPS...</center></h1>
                 <div style={{display:"flex", justifyContent:"center", padding:"0px", margin:"0px"}}>
                     <img src="images/badhaircut1.jpg" alt="404img" height="300px" width="300px" style={{mixBlendMode:"multiply"}}/>
