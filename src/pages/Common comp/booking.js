@@ -5,7 +5,6 @@ export default function Booking() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-console.log(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
         try {
             await emailjs.sendForm(
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
